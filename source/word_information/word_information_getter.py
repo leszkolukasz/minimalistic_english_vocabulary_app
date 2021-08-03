@@ -1,7 +1,8 @@
 from abc import ABC, abstractmethod
 
 class WordInformationGetter(ABC):
-    
+    """Abstract class for communication management with 3rd party modules"""
+
     @abstractmethod
     def get_translation(self):
         pass
