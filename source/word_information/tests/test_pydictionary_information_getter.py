@@ -24,5 +24,5 @@ def test_methods():
         ]
     assert word_information_getter.get_synonym('carrot') == x, 'Wrong synonym'
 
-    assert word_information_getter.get_antonym('hello') == ['love', 'like', 'goodness', 'good', 'benignity'], (
+    assert word_information_getter.get_antonym('hate') == ['love', 'like', 'goodness', 'good', 'benignity'], (
         'Wrong antonym')

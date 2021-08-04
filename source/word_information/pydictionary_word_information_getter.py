@@ -58,7 +58,7 @@ class PyDictionaryWordInformationGetter():
         List[str]
             definition of word
         """
-        return self.dictionary.definition(word)
+        return self.dictionary.meaning(word)
 
     def get_synonym(self, word):
         """
