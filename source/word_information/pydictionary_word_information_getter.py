@@ -13,10 +13,7 @@ class PyDictionaryWordInformationGetter():
         dictionary which is used for making operations on words
     """
     
-    def __init__(
-        self, 
-        language
-        ):
+    def __init__(self, language):
         """
         Parameters
         ----------
