@@ -1,5 +1,5 @@
-**/scripts
-data/dictionary.txt
+scripts
+data/*
 roadmap
 vocab
 **/__pycache__
