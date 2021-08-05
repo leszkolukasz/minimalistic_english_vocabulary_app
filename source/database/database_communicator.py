@@ -13,7 +13,6 @@ class DatabaseCommunicatorSingleton(type):
             DatabaseCommunicatorSingleton.instance = super().__call__(dictionary_name)
         
         return DatabaseCommunicatorSingleton.instance
-        
 
 
 class DatabaseCommunicator(metaclass=DatabaseCommunicatorSingleton):
