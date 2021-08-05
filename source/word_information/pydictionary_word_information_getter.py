@@ -26,8 +26,6 @@ class PyDictionaryWordInformationGetter():
 
     def get_translation(self, word):
         """
-        Get translation of word
-
         Parameters
         ----------
         word: str
@@ -43,8 +41,6 @@ class PyDictionaryWordInformationGetter():
 
     def get_definition(self, word):
         """
-        Get definition of word
-
         Parameters
         ----------
         word: str
@@ -59,8 +55,6 @@ class PyDictionaryWordInformationGetter():
 
     def get_synonym(self, word):
         """
-        Get synonyms of word
-
         Parameters
         ----------
         word: str
@@ -75,8 +69,6 @@ class PyDictionaryWordInformationGetter():
 
     def get_antonym(self, word):
         """
-        Get antonyms of word
-
         Parameters
         ----------
         word: str
