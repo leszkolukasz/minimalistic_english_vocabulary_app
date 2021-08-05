@@ -81,12 +81,12 @@ class DatabaseCommunicator(metaclass=DatabaseCommunicatorSingleton):
 
     def get_list_of_words(self):
         """
-        Get lists of discovered and undiscovered words sorted according to algorithm
+        Get lists of discovered and undiscovered words sorted according to the algorithm
 
         Returns
         -------
         Tuple[List[Entry], List[Entry]]:
-            first elemnet of the tuple is a list of discovered words, second argument is a list of undiscovered words
+            first element of the tuple is a list of discovered words, second element is a list of undiscovered words
         """
         
         discovered = []
