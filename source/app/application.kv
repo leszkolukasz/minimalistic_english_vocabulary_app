@@ -1,0 +1,40 @@
+#:kivy 2.0.0
+
+<Area>:
+    orientation: 'vertical'
+    multi_screen: multi_screen
+    MultiScreen:
+        id: multi_screen
+        size_hint: 1, 895
+        MainScreen:
+            name: 'main'
+        SearchScreen:
+            name: 'search'
+        ViewScreen:
+            name: 'view'
+
+    Widget:
+        size_hint: 1, 5
+        canvas:
+            Color:
+                rgba: 0, 0, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    BoxLayout:
+        size_hint: 1, 100
+        spacing: 0
+        HomeButton:
+            Button:
+                text: 'Home'
+                on_release: root.change_to_home()
+        SearchButton:
+            Button: 
+                text: 'Search'
+                on_release: root.change_to_search()
+        ViewButton:
+            Button: 
+                text: 'View'
+                on_release: root.change_to_view()
+    
