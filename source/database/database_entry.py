@@ -12,8 +12,10 @@ class Entry:
         english word from dictionary
     frequency: int
         how often word appeared in dictionary
-    time_to_show: int
-        when to show word in the app (default: 0)
+    level: int
+        level of advancement which decides when to show the word in the app (default: 0)
+    last_updated: datetime.date
+        last time entry's attributes where changed
     """
     def __init__(
         self,
@@ -30,7 +32,8 @@ class Entry:
         """
         self.word = word
         self.frequency = frequency
-        self.time_to_show = math.inf
+        self.level = 0
+        self.last_updated = None
 
     def __hash__(self):
         return hash(self.word)
@@ -41,9 +44,9 @@ class Entry:
         return False
 
     def __le__(self, other):
-        if self.time_to_show < other.time_to_show:
+        if self.level < other.level:
             return True
-        elif self.time_to_show > other.time_to_show:
+        elif self.level > other.level:
             return False
         else:
             if self.frequency > other.frequency:

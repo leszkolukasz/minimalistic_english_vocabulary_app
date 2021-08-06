@@ -1,6 +1,8 @@
 import math
 import pickle
 import re
+import datetime
+from data import constants
 from . import database_entry
 
 class DatabaseCommunicatorSingleton(type):
@@ -40,11 +42,11 @@ class DatabaseCommunicator(metaclass=DatabaseCommunicatorSingleton):
         self._export_dictionary()
 
     def _load_dictionary(self):
-        with open(f'/data/{dictionary_name}.pickle', 'rb') as file:
+        with open(f'/data/{dictionary_name}', 'rb') as file:
             self._dictionary = pickle.load(file)
 
     def _export_dictionary(self):
-        with open(f'/data/{dictionary_name}.pickle', 'wb') as file:
+        with open(f'/data/{dictionary_name}', 'wb') as file:
             pickle.dump(self._dictionary, file)
 
     def find_words(self, word_regex):
@@ -92,8 +94,10 @@ class DatabaseCommunicator(metaclass=DatabaseCommunicatorSingleton):
         undiscovered = []
 
         for entry in self._dictionary:
-            if entry.time_to_show < math.inf:
+            if entry.level == 0:
+                undiscovered.append(entry)
+
+            elif entry.level < 16 and entry.last_updated + datetime.timedelta(days=constants.TIME_DELAY[entry.level]) <= datetime.date.today():
                 discovered.append(entry)
-            else: undiscovered.append(entry)
 
         return (sorted(discovered), sorted(undiscovered))
