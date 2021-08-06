@@ -1,5 +1,5 @@
 scripts
-data/*
+data/*.txt
 roadmap
 vocab
 **/__pycache__
