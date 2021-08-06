@@ -1,5 +1,8 @@
 #:kivy 2.0.0
 
 <MainScreen>:
-    Button:
-        text: 'Main screen'
+    scroll_box_layout: scroll_box_layout
+    ScrollView:
+        BoxLayout:
+            id: scroll_box_layout
+            orientation: 'vertical'

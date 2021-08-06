@@ -42,11 +42,11 @@ class DatabaseCommunicator(metaclass=DatabaseCommunicatorSingleton):
         self._export_dictionary()
 
     def _load_dictionary(self):
-        with open(f'/data/{dictionary_name}', 'rb') as file:
+        with open(f'/data/{self.dictionary_name}', 'rb') as file:
             self._dictionary = pickle.load(file)
 
     def _export_dictionary(self):
-        with open(f'/data/{dictionary_name}', 'wb') as file:
+        with open(f'/data/{self.dictionary_name}', 'wb') as file:
             pickle.dump(self._dictionary, file)
 
     def find_words(self, word_regex):

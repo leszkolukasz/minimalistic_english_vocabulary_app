@@ -29,12 +29,19 @@ class Area(BoxLayout):
         super().__init__(*args, **kargs)
 
     def change_to_home(self):
+        self.multi_screen.transition.direction = 'right'
         self.multi_screen.current = 'main'
 
     def change_to_search(self):
+        if self.multi_screen.current == 'main':
+            self.multi_screen.transition.direction = 'left'
+
+        else: self.multi_screen.transition.direction = 'right'
+
         self.multi_screen.current = 'search'
 
     def change_to_view(self):
+        self.multi_screen.transition.direction = 'left'
         self.multi_screen.current = 'view'
 
 class Main(App):
