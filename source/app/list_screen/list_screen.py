@@ -1,0 +1,1 @@
+"""This module defines list screen which shows all word that are learned or are being learned"""
