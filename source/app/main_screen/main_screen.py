@@ -1,7 +1,10 @@
+"""This module defines main screen which is used for learning"""
+
 from kivy.uix.screenmanager import Screen
 from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import ObjectProperty
 from kivy.lang import Builder
+from kivy.clock import Clock
 
 from source.database.database_communicator import DatabaseCommunicator
 from source.database.database_entry import Entry
@@ -12,7 +15,6 @@ class MainScreen(Screen):
     scroll_box_layout = ObjectProperty(None)
 
     def __init__(self, *args, **kargs):
-        
         super().__init__(*args, **kargs)
         #self._communicator = DatabaseCommunicator('database')
         #self.discovered, self.undiscovered = self._communicator.get_list_of_words()

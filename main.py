@@ -1,3 +1,5 @@
+"""This module runs the whole application"""
+
 import source.app.application
 
 def main():
