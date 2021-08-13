@@ -4,4 +4,5 @@ This app is meant to be a free alternative for other english learning apps, espe
 
 ## Notice
 
-Development of this app has come to a halt due to problems with kivy framework
+~~Development of this app has come to a halt due to problems with kivy framework~~
+Development of this app has been resumed
