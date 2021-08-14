@@ -10,7 +10,7 @@ def get_dictionary():
         dictionary containing all english words and their frequency of appearance
     """
     
-    with open('data/raw_dictionary.txt', 'r') as dictionary:
+    with open('data/frequency_dictionary.txt', 'r') as dictionary:
         organised_dictionary = {}
         for line in dictionary:
             word, frequency = line.split()
