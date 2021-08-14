@@ -1,8 +1,133 @@
 #:kivy 2.0.0
 
+#:include source/app/global.kv
+
 <MainScreen>:
-    scroll_box_layout: scroll_box_layout
+    box_layout: box_layout
+    word_name: word_name
+    word_translation: word_translation
+    word_meaning: word_meaning
+    word_synonym: word_synonym
+    word_antonym: word_antonym
+    word_examples: word_examples
+    know_button: know_button
+    not_know_button: not_know_button
+    next_button: next_button
+    previous_button: previous_button
+    forget_button: forget_button
+
     ScrollView:
         BoxLayout:
-            id: scroll_box_layout
+            id: box_layout
             orientation: 'vertical'
+            size_hint_y: None
+
+            ScrollLabel:
+                id: word_name
+                text: 'name'
+                halign: 'center'
+                padding: '0dp', '40dp'
+                font_size: '30dp'
+
+            ScrollLabel:
+                text: 'Translation'
+                font_size: '25dp'
+                padding: '5dp', '5dp'
+
+            LineSeparator:
+
+            ScrollLabel:
+                id: word_translation
+                text: 'translation'
+                padding: '30dp', '10dp'
+                font_size: '17dp'
+
+            ScrollLabel:
+                text: 'Definition'
+                font_size: '25dp'
+                padding: '5dp', '5dp'
+
+            LineSeparator:
+
+            ScrollLabel:
+                id: word_meaning
+                text: 'meaning'
+                padding: '30dp', '10dp'
+                font_size: '17dp'
+
+            ScrollLabel:
+                text: 'Synonyms'
+                font_size: '25dp'
+                padding: '5dp', '5dp'
+
+            LineSeparator:
+
+            ScrollLabel:
+                id: word_synonym
+                text: 'synonym'
+                padding: '30dp', '10dp'
+                font_size: '17dp'
+
+            ScrollLabel:
+                text: 'Antonyms'
+                font_size: '25dp'
+                padding: '5dp', '5dp'
+
+            LineSeparator:
+
+            ScrollLabel:
+                id: word_antonym
+                text: 'antonym'
+                padding: '30dp', '10dp'
+                font_size: '17dp'
+
+            ScrollLabel:
+                text: 'Examples'
+                font_size: '25dp'
+                padding: '5dp', '5dp'
+
+            LineSeparator:
+
+            ScrollLabel:
+                id: word_examples
+                text: 'example'
+                padding: '30dp', '10dp'
+                font_size: '17dp'
+
+            Widget:
+                size_hint: 1, None
+                height: '30dp'
+
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint_y: None
+                height: '54dp'
+                padding: '0dp', '2dp'
+                spacing: '2dp'
+                Button:
+                    id: know_button
+                    text: 'Know'
+                Button:
+                    id: not_know_button
+                    text: "Don't know"
+
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint_y: None
+                height: '50dp'
+                Button:
+                    id: forget_button
+                    text: "Don't show"
+
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint_y: None
+                height: '54dp'
+                padding: '0dp', '2dp'
+                spacing: '2dp'
+                Button:
+                    id: previous_button
+                    text: 'Previous'
+                Button:
+                    id: next_button
+                    text: 'Next'
