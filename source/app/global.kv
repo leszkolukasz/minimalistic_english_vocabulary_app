@@ -1,0 +1,16 @@
+#:kivy 2.0.0
+
+<ScrollLabel@Label>:
+    text_size: (self.width, None)
+    size_hint: (1, None)
+    height: self.texture_size[1]
+
+<LineSeparator@Widget>:
+    size_hint: 1, None
+    height: '3dp'
+    canvas:
+        Color:
+            rgba: 0, 0, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
