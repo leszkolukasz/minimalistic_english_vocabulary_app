@@ -3,7 +3,8 @@ import pickle
 import re
 import datetime
 from data import constants
-from . import database_entry
+from .database_entry import Entry
+import os
 
 class DatabaseCommunicatorSingleton(type):
     """Singleton metaclass for DatabaseCommunicator"""
@@ -42,11 +43,11 @@ class DatabaseCommunicator(metaclass=DatabaseCommunicatorSingleton):
         self._export_dictionary()
 
     def _load_dictionary(self):
-        with open(f'/data/{self.dictionary_name}', 'rb') as file:
+        with open(f'./data/{self.dictionary_name}.txt', 'rb') as file:
             self._dictionary = pickle.load(file)
 
-    def _export_dictionary(self):
-        with open(f'/data/{self.dictionary_name}', 'wb') as file:
+    def export_dictionary(self):
+        with open(f'./data/{self.dictionary_name}.txt', 'wb') as file:
             pickle.dump(self._dictionary, file)
 
     def find_words(self, word_regex):
@@ -67,6 +68,7 @@ class DatabaseCommunicator(metaclass=DatabaseCommunicatorSingleton):
             if re.fullmatch(word_regex, entry.word) is not None:
                 list_of_entries.append(entry)
 
+        list_of_entries = sorted(list_of_entries, key=lambda entry: entry.word)
         return list_of_entries
 
     def update_word(self, entry):
@@ -78,7 +80,7 @@ class DatabaseCommunicator(metaclass=DatabaseCommunicatorSingleton):
         """
 
         self._dictionary.remove(entry)
-        self._dictionary.update(entry)
+        self._dictionary.update([entry])
 
     def get_list_of_words(self):
         """
