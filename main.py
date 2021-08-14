@@ -1,9 +1,9 @@
 """This module runs the whole application"""
 
-import source.app.application
+from source.app.application import Main
 
 def main():
-    source.app.application.Main().run()
+    Main().run()
 
 if __name__ == '__main__':
     main()
