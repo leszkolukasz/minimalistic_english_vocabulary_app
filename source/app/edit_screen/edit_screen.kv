@@ -1,5 +1,108 @@
 #:kivy 2.0.0
 
-<ViewScreen>:
-    Button:
-        text: 'View screen'
+#:include source/app/global.kv
+
+<EditScreen>:
+    box_layout: box_layout
+    word_name: word_name
+    word_translation: word_translation
+    word_meaning: word_meaning
+    word_synonym: word_synonym
+    word_antonym: word_antonym
+    word_examples: word_examples
+    level_input: level_input
+    submit_button: submit_button
+
+    ScrollView:
+        BoxLayout:
+            id: box_layout
+            orientation: 'vertical'
+            size_hint_y: None
+
+            ScrollLabel:
+                id: word_name
+                text: 'name'
+                halign: 'center'
+                padding: '0dp', '40dp'
+                font_size: '30dp'
+
+            ScrollLabel:
+                text: 'Translation'
+                font_size: '25dp'
+                padding: '5dp', '5dp'
+
+            LineSeparator:
+
+            ScrollLabel:
+                id: word_translation
+                text: 'translation'
+                padding: '30dp', '10dp'
+                font_size: '17dp'
+
+            ScrollLabel:
+                text: 'Definition'
+                font_size: '25dp'
+                padding: '5dp', '5dp'
+
+            LineSeparator:
+
+            ScrollLabel:
+                id: word_meaning
+                text: 'meaning'
+                padding: '30dp', '10dp'
+                font_size: '17dp'
+
+            ScrollLabel:
+                text: 'Synonyms'
+                font_size: '25dp'
+                padding: '5dp', '5dp'
+
+            LineSeparator:
+
+            ScrollLabel:
+                id: word_synonym
+                text: 'synonym'
+                padding: '30dp', '10dp'
+                font_size: '17dp'
+
+            ScrollLabel:
+                text: 'Antonyms'
+                font_size: '25dp'
+                padding: '5dp', '5dp'
+
+            LineSeparator:
+
+            ScrollLabel:
+                id: word_antonym
+                text: 'antonym'
+                padding: '30dp', '10dp'
+                font_size: '17dp'
+
+            ScrollLabel:
+                text: 'Examples'
+                font_size: '25dp'
+                padding: '5dp', '5dp'
+
+            LineSeparator:
+
+            ScrollLabel:
+                id: word_examples
+                text: 'example'
+                padding: '30dp', '10dp'
+                font_size: '17dp'
+
+            Widget:
+                size_hint: 1, None
+                height: '30dp'
+
+            TextInput:
+                id: level_input
+                size_hint_y: None
+                height: '50dp'
+                text: 'Change level'
+
+            Button:
+                id: submit_button
+                size_hint_y: None
+                height: '50dp'
+                text: 'Submit'
