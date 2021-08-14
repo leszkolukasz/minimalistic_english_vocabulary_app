@@ -1,7 +1,7 @@
 import PyDictionary
-from . import word_information_getter
+from .word_information_getter import WordInformationGetter
 
-class PyDictionaryWordInformationGetter():
+class PyDictionaryWordInformationGetter(WordInformationGetter):
     """
     Manage communication with PyDictionary module
 
@@ -24,7 +24,7 @@ class PyDictionaryWordInformationGetter():
         self.dictionary = PyDictionary.PyDictionary()
         super().__init__()
 
-    def get_translation(self, word):
+    def get_translation(self, entry):
         """
         Parameters
         ----------
@@ -37,9 +37,9 @@ class PyDictionaryWordInformationGetter():
             translated word
         """
 
-        return self.dictionary.translate(word, self.language)
+        return self.dictionary.translate(entry.word, self.language)
 
-    def get_definition(self, word):
+    def get_definition(self, entry):
         """
         Parameters
         ----------
@@ -51,9 +51,9 @@ class PyDictionaryWordInformationGetter():
         List[str]
             definition of word
         """
-        return self.dictionary.meaning(word)
+        return self.dictionary.meaning(entry.word)
 
-    def get_synonym(self, word):
+    def get_synonym(self, entry):
         """
         Parameters
         ----------
@@ -65,9 +65,9 @@ class PyDictionaryWordInformationGetter():
         List[str]
             synonyms of word
         """
-        return self.dictionary.synonym(word)
+        return self.dictionary.synonym(entry.word)
 
-    def get_antonym(self, word):
+    def get_antonym(self, entry):
         """
         Parameters
         ----------
@@ -79,4 +79,4 @@ class PyDictionaryWordInformationGetter():
         List[str]
             antonyms of word
         """
-        return self.dictionary.antonym(word)
+        return self.dictionary.antonym(entry.word)
