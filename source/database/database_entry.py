@@ -34,13 +34,17 @@ class Entry:
         self.frequency = frequency
         self.level = 0
         self.last_updated = None
-
+        self.translation = None
+        self.definition = None
+        self.examples = None
+        self.synonyms = None
+        self.antonyms = None
     def __hash__(self):
         return hash(self.word)
     
     def __eq__(self, other):
         if type(self) is type(other):
-            return (self.word == other.word) and (self.frequency == other.frequency) and (self.time_to_show == other.time_to_show)
+            return self.word == other.word
         return False
 
     def __le__(self, other):
