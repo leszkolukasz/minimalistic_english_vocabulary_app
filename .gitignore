@@ -1,4 +1,5 @@
 data/*.txt
+scripts/old_scripts
 roadmap
 vocab
 **/__pycache__
