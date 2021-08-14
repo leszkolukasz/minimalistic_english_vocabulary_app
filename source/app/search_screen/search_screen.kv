@@ -1,5 +1,18 @@
 #:kivy 2.0.0
 
 <SearchScreen>:
-    Button:
-        text: 'Search screen'
+    results: results
+    searched_word: searched_word
+    BoxLayout:
+        orientation: 'vertical'
+        TextInput:
+            id: searched_word
+            size_hint_y: 1
+            multiline: False
+            text: ''
+        ScrollView:
+            size_hint_y: 9
+            BoxLayout:
+                id: results
+                orientation: 'vertical'
+                size_hint_y: None
