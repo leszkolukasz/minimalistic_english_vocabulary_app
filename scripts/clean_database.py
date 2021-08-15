@@ -1,17 +1,20 @@
+"""This script cleans database and pickles it"""
+
+from collections import defaultdict
+import os
 import sys
 sys.path.append('/home/whistleroosh/Desktop/minimalistic_english_vocabulary_app')
-import os
-import create_database
-import inflect
-from nltk.corpus import wordnet
-from nltk.corpus import wordnet as wn
+
 from deep_translator import GoogleTranslator
-from collections import defaultdict
-from source.database.database_entry import Entry
+from nltk.corpus import wordnet
+import inflect
 import pickle
 
-nouns = {x.name().split('.', 1)[0] for x in wn.all_synsets('n')}
-p = inflect.engine()
+from source.database.database_entry import Entry
+import create_database
+
+nouns = {x.name().split('.', 1)[0] for x in wordnet.all_synsets('n')}
+inflect_engine = inflect.engine()
 
 def get_translation(word):
     return GoogleTranslator(source='en', target='pl').translate(text=word)
@@ -80,15 +83,15 @@ def get_examples(word):
         examples[part] = list(examples[part])
     return examples
 
-def make_3sg_form(i):
-    new_verb = ""
-    if i.endswith("y"):
-        new_verb = i[:-1]+"ies"
-    elif i.endswith("o") or i.endswith("ch") or i.endswith("s") or i.endswith("sh") or i.endswith("x") or i.endswith("z"):
-        new_verb = i + "es"
+def make_third_person_form(word):
+    res = ""
+    if word.endswith("y"):
+        res = word[:-1]+"ies"
+    elif word.endswith("o") or word.endswith("ch") or word.endswith("s") or word.endswith("sh") or word.endswith("x") or word.endswith("z"):
+        res = word + "es"
     else:   
-        new_verb = i + "s" 
-    return new_verb
+        res = word + "s" 
+    return res
 
 def clean_dictionary():
     #remove words with unknown frequency
@@ -104,8 +107,8 @@ def clean_dictionary():
     word_dictionary_without_3rd_person = set()
     blocked = set()
     for word in word_dictionary:
-        if make_3sg_form(word) in word_dictionary:
-            blocked.update([make_3sg_form(word)])
+        if make_third_person_form(word) in word_dictionary:
+            blocked.update([make_third_person_form(word)])
     for word in word_dictionary:
         if word not in blocked:
             word_dictionary_without_3rd_person.update([word])
@@ -114,20 +117,16 @@ def clean_dictionary():
     word_dictionary_cleaned = set()
     blocked = set()
     for word in word_dictionary_without_3rd_person:
-        if word in nouns and p.plural(word) != word and p.plural(word) in word_dictionary_without_3rd_person:
-            blocked.update([p.plural(word)])
+        if word in nouns and inflect_engine.plural(word) != word and inflect_engine.plural(word) in word_dictionary_without_3rd_person:
+            blocked.update([inflect_engine.plural(word)])
     for word in word_dictionary_without_3rd_person:
         if word not in blocked:
             word_dictionary_cleaned.update([word])
 
     word_dictionary_cleaned = sorted(list(word_dictionary_cleaned))
     entry_dictionary = set()
-    cnt = 0
 
     for word in word_dictionary_cleaned:
-        cnt += 1
-        if cnt % 100 == 0:
-            break
         entry = Entry(word, frequency_dictionary[word])
         entry.translation = get_translation(word)
         entry.definition = get_definition(word)
