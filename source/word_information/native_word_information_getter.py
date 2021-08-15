@@ -1,39 +1,9 @@
 from .word_information_getter import WordInformationGetter
 
 class NativeWordInformationGetter(WordInformationGetter):
-    """
-    Manage communication with PyDictionary module
-
-    Attributes
-    ----------
-    language: str
-        abbrevation for language which is used for word translation
-    dictionary: PyDictionary
-        dictionary which is used for making operations on words
-    """
+    """Manage communication with Entry class"""
     
-    def __init__(self):
-        """
-        Parameters
-        ----------
-        language: str
-            abbrevation for language which is used for word translation
-        """
-        super().__init__()
-
     def get_translation(self, entry):
-        """
-        Parameters
-        ----------
-        word: str
-            word to be translated
-
-        Returns
-        -------
-        str
-            translated word
-        """
-
         return str(entry.translation)
 
     def get_definition(self, entry):
@@ -65,29 +35,7 @@ class NativeWordInformationGetter(WordInformationGetter):
             return '\n\n'.join(result)
 
     def get_synonym(self, entry):
-        """
-        Parameters
-        ----------
-        word: str
-            word to get synonyms for
-
-        Returns
-        -------
-        List[str]
-            synonyms of word
-        """
         return '' if entry.synonyms is None else ', '.join(entry.synonyms)
 
     def get_antonym(self, entry):
-        """
-        Parameters
-        ----------
-        word: str
-            word to get antonyms for
-
-        Returns
-        -------
-        List[str]
-            antonyms of word
-        """
         return '' if entry.antonyms is None else ', '.join(entry.antonyms)
