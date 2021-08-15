@@ -3,7 +3,7 @@
 from collections import defaultdict
 import os
 import sys
-sys.path.append('/home/whistleroosh/Desktop/minimalistic_english_vocabulary_app')
+sys.path.append(os.path.dirname(os.path.dirname(sys.argv[0])))
 
 from deep_translator import GoogleTranslator
 from nltk.corpus import wordnet
@@ -126,7 +126,7 @@ def clean_dictionary():
     word_dictionary_cleaned = sorted(list(word_dictionary_cleaned))
     entry_dictionary = set()
 
-    for word in word_dictionary_cleaned:
+    for cnt, word in enumerate(word_dictionary_cleaned):
         entry = Entry(word, frequency_dictionary[word])
         entry.translation = get_translation(word)
         entry.definition = get_definition(word)
@@ -134,6 +134,9 @@ def clean_dictionary():
         entry.antonyms = get_antonym(word)
         entry.examples = get_examples(word)
         entry_dictionary.update([entry])
+
+        if cnt % 100 == 0:
+            print(f'Done: {cnt}')
 
     with open('data/dictionary.txt', 'wb') as destination:
         pickle.dump(entry_dictionary, destination)
