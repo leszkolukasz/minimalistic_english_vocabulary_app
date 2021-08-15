@@ -1,5 +1,6 @@
 data/old_data
 scripts/old_scripts
 vocab
+vocab_minimum
 **/__pycache__
 .vscode
