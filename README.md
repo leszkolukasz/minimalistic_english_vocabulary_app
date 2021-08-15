@@ -32,10 +32,10 @@ List screen shows all the words from dictionary grouped by its level. Moreover, 
 ## Images
 
 <p float="left">
-  <img src="images/main.png" width="450" />
-  <img src="images/search.png" width="450" /> 
-  <img src="images/list.png" width="450" />
-  <img src="images/edit.png" width="450" /> 
+  <img src="images/main.png" width="400" />
+  <img src="images/search.png" width="400" /> 
+  <img src="images/list.png" width="400" />
+  <img src="images/edit.png" width="400" /> 
 </p>
 
 -------------------------------------------
