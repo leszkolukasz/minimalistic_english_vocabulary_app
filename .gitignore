@@ -1,7 +1,5 @@
-data/*.txt
 data/old_data
 scripts/old_scripts
-roadmap
 vocab
 **/__pycache__
 .vscode
