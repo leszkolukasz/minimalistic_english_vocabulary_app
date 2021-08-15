@@ -1,9 +1,9 @@
 """This module defines edit screen which is used to edit entries found by search screen"""
 
-from kivy.uix.screenmanager import Screen
+from kivy.clock import Clock
 from kivy.lang import Builder
 from kivy.properties import ObjectProperty
-from kivy.clock import Clock
+from kivy.uix.screenmanager import Screen
 
 from source.database.database_communicator import DatabaseCommunicator
 from source.database.database_entry import Entry
@@ -11,7 +11,36 @@ from source.word_information.native_word_information_getter import NativeWordInf
 
 Builder.load_file('source/app/edit_screen/edit_screen.kv')
 
+
 class EditScreen(Screen):
+    """
+    Screen which allows to view word details and edit its level
+
+    Attributes
+    ----------
+    box_layout: ObjectProperty
+        link to layout inside ScrollView
+    submit_button: ObjectProperty
+        link to submit button
+    word_antonym: ObjectProperty
+        link to antonyms field
+    word_examples: ObjectProperty
+        link to examples field
+    word_meaning: ObjectProperty
+        link to word meaning field
+    word_name: ObjectProperty
+        link to word name field
+    word_synonym: ObjectProperty
+        link to word synonym link
+    word_translation: ObjectProperty
+        link to word translation link
+    _communicator: DatabaseCommunicator
+        communicator which is used to control database
+    _translator: NativeWordInformationGetter
+        translator which fetches word information
+    current_entry: Entry
+        currently displayed entry
+    """
     box_layout = ObjectProperty(None)
     word_name = ObjectProperty(None)
     word_translation = ObjectProperty(None)
@@ -53,4 +82,5 @@ class EditScreen(Screen):
             else:
                 self.current_entry.level = value
                 self._communicator.update_word(self.current_entry)
+                self._communicator.export_dictionary()
                 self.level_input.text = 'Changed successfully'

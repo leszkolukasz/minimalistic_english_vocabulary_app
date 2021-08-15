@@ -3,9 +3,17 @@
 #:include source/app/global.kv
 
 <Area>:
-    orientation: 'vertical'
-    multi_screen: multi_screen
     edit_screen: edit_screen
+    multi_screen: multi_screen
+    orientation: 'vertical'
+    canvas.before:
+        Color:
+            rgba: (0.02, 0.098, 0.137, 1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
     MultiScreen:
         id: multi_screen
         size_hint: 1, 9
@@ -26,14 +34,25 @@
         spacing: 0
         HomeButton:
             Button:
-                text: 'Home'
+                background_color: button_color
+                color: font_color
+                on_press: self.background_color = button_pressed_color
                 on_release: root.change_to_home()
+                on_release: self.background_color = button_color
+                text: 'Home'
         SearchButton:
             Button: 
-                text: 'Search'
+                background_color: button_color
+                color: font_color
+                on_press: self.background_color = button_pressed_color
                 on_release: root.change_to_search()
+                on_release: self.background_color = button_color
+                text: 'Search'
         ListButton:
             Button: 
-                text: 'List'
+                background_color: button_color
+                color: font_color
+                on_press: self.background_color = button_pressed_color
                 on_release: root.change_to_list()
-    
+                on_release: self.background_color = button_color
+                text: 'List'

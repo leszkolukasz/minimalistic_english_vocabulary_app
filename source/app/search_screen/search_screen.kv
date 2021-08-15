@@ -1,5 +1,7 @@
 #:kivy 2.0.0
 
+#:include source/app/global.kv
+
 <SearchScreen>:
     results: results
     searched_word: searched_word
@@ -7,8 +9,8 @@
         orientation: 'vertical'
         TextInput:
             id: searched_word
-            size_hint_y: 1
             multiline: False
+            size_hint_y: 1
             text: ''
         ScrollView:
             size_hint_y: 9

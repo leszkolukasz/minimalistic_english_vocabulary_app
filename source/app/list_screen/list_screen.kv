@@ -1,0 +1,23 @@
+#:kivy 2.0.0
+
+#:include source/app/global.kv
+
+<ListScreen>:
+    box: box
+    grid: grid
+    results: results
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            id: box
+            orientation: 'vertical'
+            GridLayout:
+                cols: 5
+                id: grid
+                size_hint: 1, 3
+        ScrollView:
+            size_hint: 1, 3
+            BoxLayout:
+                id: results
+                orientation: 'vertical'
+                size_hint_y: None

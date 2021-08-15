@@ -4,17 +4,17 @@
 
 <MainScreen>:
     box_layout: box_layout
-    word_name: word_name
-    word_translation: word_translation
-    word_meaning: word_meaning
-    word_synonym: word_synonym
+    forget_button: forget_button
+    know_button: know_button
+    next_button: next_button
+    not_know_button: not_know_button
+    previous_button: previous_button
     word_antonym: word_antonym
     word_examples: word_examples
-    know_button: know_button
-    not_know_button: not_know_button
-    next_button: next_button
-    previous_button: previous_button
-    forget_button: forget_button
+    word_meaning: word_meaning
+    word_name: word_name
+    word_synonym: word_synonym
+    word_translation: word_translation
 
     ScrollView:
         BoxLayout:
@@ -23,111 +23,142 @@
             size_hint_y: None
 
             ScrollLabel:
-                id: word_name
-                text: 'name'
-                halign: 'center'
-                padding: '0dp', '40dp'
+                color: font_color
                 font_size: '30dp'
+                halign: 'center'
+                id: word_name
+                padding: '0dp', '40dp'
+                text: 'name'
 
             ScrollLabel:
+                color: font_color
+                font_size: '25dp'
+                padding: '5dp', '5dp'
                 text: 'Translation'
-                font_size: '25dp'
-                padding: '5dp', '5dp'
 
             LineSeparator:
 
             ScrollLabel:
+                color: font_color
+                font_size: '17dp'
                 id: word_translation
+                padding: '30dp', '10dp'
                 text: 'translation'
-                padding: '30dp', '10dp'
-                font_size: '17dp'
 
             ScrollLabel:
+                color: font_color
+                font_size: '25dp'
+                padding: '5dp', '5dp'
                 text: 'Definition'
-                font_size: '25dp'
-                padding: '5dp', '5dp'
 
             LineSeparator:
 
             ScrollLabel:
+                color: font_color
+                font_size: '17dp'
                 id: word_meaning
+                padding: '30dp', '10dp'
                 text: 'meaning'
-                padding: '30dp', '10dp'
-                font_size: '17dp'
 
             ScrollLabel:
+                color: font_color
+                font_size: '25dp'
+                padding: '5dp', '5dp'
                 text: 'Synonyms'
-                font_size: '25dp'
-                padding: '5dp', '5dp'
 
             LineSeparator:
 
             ScrollLabel:
+                color: font_color
+                font_size: '17dp'
                 id: word_synonym
+                padding: '30dp', '10dp'
                 text: 'synonym'
-                padding: '30dp', '10dp'
-                font_size: '17dp'
 
             ScrollLabel:
+                color: font_color
+                font_size: '25dp'
+                padding: '5dp', '5dp'
                 text: 'Antonyms'
-                font_size: '25dp'
-                padding: '5dp', '5dp'
 
             LineSeparator:
 
             ScrollLabel:
+                color: font_color
+                font_size: '17dp'
                 id: word_antonym
-                text: 'antonym'
                 padding: '30dp', '10dp'
-                font_size: '17dp'
+                text: 'antonym'
 
             ScrollLabel:
-                text: 'Examples'
+                color: font_color
                 font_size: '25dp'
                 padding: '5dp', '5dp'
+                text: 'Examples'
 
             LineSeparator:
 
             ScrollLabel:
-                id: word_examples
-                text: 'example'
-                padding: '30dp', '10dp'
+                color: font_color
                 font_size: '17dp'
+                id: word_examples
+                padding: '30dp', '10dp'
+                text: 'example'
 
             Widget:
-                size_hint: 1, None
                 height: '30dp'
+                size_hint: 1, None
 
             BoxLayout:
-                orientation: 'horizontal'
-                size_hint_y: None
                 height: '54dp'
+                orientation: 'horizontal'
                 padding: '0dp', '2dp'
+                size_hint_y: None
                 spacing: '2dp'
                 Button:
+                    background_color: button_color
+                    color: font_color
                     id: know_button
+                    on_press: self.background_color = button_pressed_color
+                    on_release: self.background_color = button_color
                     text: 'Know'
                 Button:
+                    background_color: button_color
+                    color: font_color
                     id: not_know_button
+                    on_press: self.background_color = button_pressed_color
+                    on_release: self.background_color = button_color
                     text: "Don't know"
 
             BoxLayout:
+                height: '50dp'
                 orientation: 'horizontal'
                 size_hint_y: None
-                height: '50dp'
                 Button:
+                    background_color: button_color
+                    color: font_color
                     id: forget_button
+                    on_press: self.background_color = button_pressed_color
+                    on_release: self.background_color = button_color
                     text: "Don't show"
 
             BoxLayout:
-                orientation: 'horizontal'
-                size_hint_y: None
                 height: '54dp'
+                orientation: 'horizontal'
                 padding: '0dp', '2dp'
+                size_hint_y: None
                 spacing: '2dp'
                 Button:
+                    background_color: button_color
+                    color: font_color
                     id: previous_button
+                    on_press: self.background_color = button_pressed_color
+                    on_release: self.background_color = button_color
                     text: 'Previous'
                 Button:
+                    background_color: button_color
+                    color: font_color
                     id: next_button
+                    on_press: self.background_color = button_pressed_color
+                    on_release: self.background_color = button_color
                     text: 'Next'

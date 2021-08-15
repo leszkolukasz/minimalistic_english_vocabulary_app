@@ -1,16 +1,20 @@
 #:kivy 2.0.0
 
+#:set button_color (0.22, 0.639, 0.647)
+#:set button_pressed_color (0.341, 0.80, 0.60)
+#:set font_color (0.78, 0.976, 0.80)
+
 <ScrollLabel@Label>:
-    text_size: (self.width, None)
-    size_hint: (1, None)
     height: self.texture_size[1]
+    size_hint: (1, None)
+    text_size: (self.width, None)
 
 <LineSeparator@Widget>:
-    size_hint: 1, None
     height: '3dp'
+    size_hint: 1, None
     canvas:
         Color:
-            rgba: 0, 0, 1, 1
+            rgba: 0.22, 0.639, 0.647, 1
         Rectangle:
             pos: self.pos
             size: self.size
