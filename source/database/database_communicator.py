@@ -71,6 +71,7 @@ class DatabaseCommunicator(metaclass=DatabaseCommunicatorSingleton):
         return list_of_entries
 
     def update_word(self, entry):
+        entry.last_updated = datetime.date.today()
         self._dictionary.remove(entry)
         self._dictionary.update([entry])
 

@@ -133,7 +133,6 @@ class MainScreen(Screen):
         if self.current_entry.word == 'No more words':
             return
         self.current_entry.level += 1
-        self.current_entry.last_updated = datetime.date.today()
         self._communicator.update_word(self.current_entry)
         self._communicator.export_dictionary()
         self.build_box_layout()
@@ -142,7 +141,6 @@ class MainScreen(Screen):
         if self.current_entry.word == 'No more words':
             return
         self.current_entry.level = 1
-        self.current_entry.last_updated = datetime.date.today()
         self._communicator.update_word(self.current_entry)
         self._communicator.export_dictionary()
         self.build_box_layout()
@@ -172,7 +170,6 @@ class MainScreen(Screen):
         if self.current_entry.word == 'No more words':
             return
         self.current_entry.level = 16
-        self.current_entry.last_updated = datetime.date.today()
         self._communicator.update_word(self.current_entry)
         self._communicator.export_dictionary()
         self.build_box_layout()
