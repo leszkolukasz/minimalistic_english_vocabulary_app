@@ -29,5 +29,14 @@ Search screen allows you to look up arbitrary word from dictionary. If you click
 
 List screen shows all the words from dictionary grouped by its level. Moreover, you can view the words that you have learned on that day. Each word is clickable and allows you to edit its level.
 
+## Images
+
+<p float="left">
+  <img src="images/main.png" width="450" />
+  <img src="images/search.png" width="450" /> 
+  <img src="images/list.png" width="450" />
+  <img src="images/edit.png" width="450" /> 
+</p>
+
 -------------------------------------------
 <sup>1</sup> Level of the words determines when it is to be shown in the app. It is a value in range [0 ,16]. 0 means that you haven't seen this word yet. 16 means that you now this word and it will never be shown again. "Know" button increments level value, while "Don't know" button sets it to 1. To see levels and corresponding time delays see constants.py
