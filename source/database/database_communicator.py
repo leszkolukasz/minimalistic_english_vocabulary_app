@@ -51,6 +51,8 @@ class DatabaseCommunicator(metaclass=DatabaseCommunicatorSingleton):
         for entry in self._dictionary:
             if re.fullmatch(word_regex, entry.word) is not None:
                 list_of_entries.append(entry)
+            if len(list_of_entries) > 1000:
+                break
         list_of_entries = sorted(list_of_entries, key=lambda entry: entry.word)
         return list_of_entries
 
@@ -59,6 +61,8 @@ class DatabaseCommunicator(metaclass=DatabaseCommunicatorSingleton):
         for entry in self._dictionary:
             if entry.level == level:
                 list_of_entries.append(entry)
+            if len(list_of_entries) > 1000:
+                break
         list_of_entries = sorted(list_of_entries, key=lambda entry: entry.word)
         return list_of_entries
 
@@ -67,6 +71,8 @@ class DatabaseCommunicator(metaclass=DatabaseCommunicatorSingleton):
         for entry in self._dictionary:
             if entry.last_updated == datetime.date.today():
                 list_of_entries.append(entry)
+            if len(list_of_entries) > 1000:
+                break
         list_of_entries = sorted(list_of_entries, key=lambda entry: entry.word)
         return list_of_entries
 
