@@ -1,6 +1,6 @@
 # Minimalistic English Vocabulary App
 
-This app is meant to be a free alternative for other english learning apps, especially those which bombard you with adds every few seconds. It works by showing you a batch of words every day and for each word you will see its translation to your native language alongisde with its definition, synonyms and antonyms (definition, synonyms and antonyms are only shown in english lanugage). For each word you have to decide whether you remember this word or need to revise it, and this decision will impact when you will see this word next time. *Minimalistic English Vocabulary App* is based on a simple premise: the better you know given word, the rarier it will be shown to you in the daily batch. This is meant to boost the learning process and maximize the memorization of the vocabulary.
+This app is meant to be a free alternative for other english learning apps, especially those which bombard you with adds every few seconds. It works by showing you a batch of words every day, and for each word you will see its translation to your native language alongisde with its definition, synonyms and antonyms, and usage examples (definition, synonyms, antonyms and usage examples are only shown in english lanugage). For each word you have to decide whether you remember this word or need to revise it, and this decision will impact when you will see this word next time. *Minimalistic English Vocabulary App* is based on a simple premise: the better you know given word, the rarier it will be shown to you in the daily batch. This is meant to boost the learning process and maximize the memorization of the vocabulary.
 
 ## Installation (Desktop mode)
 
@@ -27,7 +27,7 @@ Home screen has the following buttons:
 
 Search screen allows you to look up arbitrary word from dictionary. If you click on the word, you can edit its level<sup>1</sup>
 
-List screen shows all the words from dictionary grouped by its level. Moreover, you can view the words that you have learned on that day. Each word is clickable and allows you to edit its level.
+List screen shows all the words from dictionary grouped by its level. Moreover, you can view the words that you have learned during the day. Each word is clickable and allows you to edit its level.
 
 ## Images
 
