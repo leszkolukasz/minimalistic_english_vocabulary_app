@@ -6,3 +6,4 @@ vocab
 vocab_minimum
 .buildozer
 buildozer.spec
+bin
