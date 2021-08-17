@@ -21,7 +21,7 @@ To use the application run main.py.
 Home screen has the following buttons:
 - "Know" - show the word with increased time delay
 - "Don't know" - show the word on the following day
-- "Forget" - never show this word again
+- "Don't show" - never show this word again
 - "Previous" - move to previous word
 - "Next" - move to next word
 
@@ -39,4 +39,4 @@ List screen shows all the words from dictionary grouped by its level. Moreover, 
 </p>
 
 -------------------------------------------
-<sup>1</sup> Level of the words determines when it is to be shown in the app. It is a value in range [0 ,16]. 0 means that you haven't seen this word yet. 16 means that you now this word and it will never be shown again. "Know" button increments level value, while "Don't know" button sets it to 1. To see levels and corresponding time delays see constants.py
+<sup>1</sup> Level of the words determines when it is to be shown in the app. It is a value in range [0 ,16]. 0 means that you haven't seen this word yet. 16 means that you know this word and it will never be shown again. "Know" button increments level value, while "Don't know" button sets it to 1. To see levels and corresponding time delays see constants.py
