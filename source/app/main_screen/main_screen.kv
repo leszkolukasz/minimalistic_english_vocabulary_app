@@ -16,99 +16,106 @@
     word_synonym: word_synonym
     word_translation: word_translation
 
-    ScrollView:
+    BoxLayout:
+        orientation: 'vertical'
+        ScrollView:
+            size_hint_y: 1
+            BoxLayout:
+                id: box_layout
+                orientation: 'vertical'
+                size_hint_y: None
+
+                ScrollLabel:
+                    color: font_color
+                    font_size: '30dp'
+                    halign: 'center'
+                    id: word_name
+                    padding: '0dp', '40dp'
+                    text: 'name'
+
+                ScrollLabel:
+                    color: font_color
+                    font_size: '25dp'
+                    padding: '5dp', '5dp'
+                    text: 'Translation'
+
+                LineSeparator:
+
+                ScrollLabel:
+                    color: font_color
+                    font_size: '17dp'
+                    id: word_translation
+                    padding: '30dp', '10dp'
+                    text: 'translation'
+
+                ScrollLabel:
+                    color: font_color
+                    font_size: '25dp'
+                    padding: '5dp', '5dp'
+                    text: 'Definition'
+
+                LineSeparator:
+
+                ScrollLabel:
+                    color: font_color
+                    font_size: '17dp'
+                    id: word_meaning
+                    padding: '30dp', '10dp'
+                    text: 'meaning'
+
+                ScrollLabel:
+                    color: font_color
+                    font_size: '25dp'
+                    padding: '5dp', '5dp'
+                    text: 'Synonyms'
+
+                LineSeparator:
+
+                ScrollLabel:
+                    color: font_color
+                    font_size: '17dp'
+                    id: word_synonym
+                    padding: '30dp', '10dp'
+                    text: 'synonym'
+
+                ScrollLabel:
+                    color: font_color
+                    font_size: '25dp'
+                    padding: '5dp', '5dp'
+                    text: 'Antonyms'
+
+                LineSeparator:
+
+                ScrollLabel:
+                    color: font_color
+                    font_size: '17dp'
+                    id: word_antonym
+                    padding: '30dp', '10dp'
+                    text: 'antonym'
+
+                ScrollLabel:
+                    color: font_color
+                    font_size: '25dp'
+                    padding: '5dp', '5dp'
+                    text: 'Examples'
+
+                LineSeparator:
+
+                ScrollLabel:
+                    color: font_color
+                    font_size: '17dp'
+                    id: word_examples
+                    padding: '30dp', '10dp'
+                    text: 'example'
+
+                Widget:
+                    height: '30dp'
+                    size_hint: 1, None
+
         BoxLayout:
-            id: box_layout
             orientation: 'vertical'
             size_hint_y: None
-
-            ScrollLabel:
-                color: font_color
-                font_size: '30dp'
-                halign: 'center'
-                id: word_name
-                padding: '0dp', '40dp'
-                text: 'name'
-
-            ScrollLabel:
-                color: font_color
-                font_size: '25dp'
-                padding: '5dp', '5dp'
-                text: 'Translation'
-
-            LineSeparator:
-
-            ScrollLabel:
-                color: font_color
-                font_size: '17dp'
-                id: word_translation
-                padding: '30dp', '10dp'
-                text: 'translation'
-
-            ScrollLabel:
-                color: font_color
-                font_size: '25dp'
-                padding: '5dp', '5dp'
-                text: 'Definition'
-
-            LineSeparator:
-
-            ScrollLabel:
-                color: font_color
-                font_size: '17dp'
-                id: word_meaning
-                padding: '30dp', '10dp'
-                text: 'meaning'
-
-            ScrollLabel:
-                color: font_color
-                font_size: '25dp'
-                padding: '5dp', '5dp'
-                text: 'Synonyms'
-
-            LineSeparator:
-
-            ScrollLabel:
-                color: font_color
-                font_size: '17dp'
-                id: word_synonym
-                padding: '30dp', '10dp'
-                text: 'synonym'
-
-            ScrollLabel:
-                color: font_color
-                font_size: '25dp'
-                padding: '5dp', '5dp'
-                text: 'Antonyms'
-
-            LineSeparator:
-
-            ScrollLabel:
-                color: font_color
-                font_size: '17dp'
-                id: word_antonym
-                padding: '30dp', '10dp'
-                text: 'antonym'
-
-            ScrollLabel:
-                color: font_color
-                font_size: '25dp'
-                padding: '5dp', '5dp'
-                text: 'Examples'
-
-            LineSeparator:
-
-            ScrollLabel:
-                color: font_color
-                font_size: '17dp'
-                id: word_examples
-                padding: '30dp', '10dp'
-                text: 'example'
-
-            Widget:
-                height: '30dp'
-                size_hint: 1, None
-
+            height: '158dp'
             BoxLayout:
                 height: '54dp'
                 orientation: 'horizontal'
