@@ -49,10 +49,10 @@ class ListScreen(Screen):
                 text=str(i),
                 color=constants.FONT_COLOR,
                 background_color=constants.BUTTON_COLOR,
-                on_press=lambda instance: self.change_button_color(instance, constants.BUTTON_PRESSED_COLOR),
+                on_press=lambda instance: self.reset_button_color(instance),
                 on_release=lambda instance, level=i: self.show_entries_by_level(instance, level)
             )
-            btn.bind(on_release=lambda instance: self.change_button_color(instance, constants.BUTTON_COLOR))
+            btn.bind(on_release=lambda instance: self.change_button_color(instance, constants.BUTTON_PRESSED_COLOR))
             self.grid.add_widget(btn)
 
         box_layout = BoxLayout(orientation='horizontal', size_hint_y=1)
@@ -60,20 +60,20 @@ class ListScreen(Screen):
             text='15',
             color=constants.FONT_COLOR,
             background_color=constants.BUTTON_COLOR,
-            on_press=lambda instance: self.change_button_color(instance, constants.BUTTON_PRESSED_COLOR),
+            on_press=lambda instance: self.reset_button_color(instance),
             on_release=lambda instance: self.show_entries_by_level(instance, 15)
         )
-        btn.bind(on_release=lambda instance: self.change_button_color(instance, constants.BUTTON_COLOR))
+        btn.bind(on_release=lambda instance: self.change_button_color(instance, constants.BUTTON_PRESSED_COLOR))
         box_layout.add_widget(btn)
 
         btn = Button(
             text='16',
             color=constants.FONT_COLOR,
             background_color=constants.BUTTON_COLOR,
-            on_press=lambda instance: self.change_button_color(instance, constants.BUTTON_PRESSED_COLOR),
+            on_press=lambda instance: self.reset_button_color(instance),
             on_release=lambda instance: self.show_entries_by_level(instance, 16)
         )
-        btn.bind(on_release=lambda instance: self.change_button_color(instance, constants.BUTTON_COLOR))
+        btn.bind(on_release=lambda instance: self.change_button_color(instance, constants.BUTTON_PRESSED_COLOR))
         box_layout.add_widget(btn)
 
         btn = Button(
@@ -81,10 +81,10 @@ class ListScreen(Screen):
             size_hint_x=3,
             color=constants.FONT_COLOR,
             background_color=constants.BUTTON_COLOR,
-            on_press=lambda instance: self.change_button_color(instance, constants.BUTTON_PRESSED_COLOR),
+            on_press=lambda instance: self.reset_button_color(instance),
             on_release=lambda instance: self.show_today_entries(instance)
         )
-        btn.bind(on_release=lambda instance: self.change_button_color(instance, constants.BUTTON_COLOR))
+        btn.bind(on_release=lambda instance: self.change_button_color(instance, constants.BUTTON_PRESSED_COLOR))
         box_layout.add_widget(btn)
 
         self.box.add_widget(box_layout)
@@ -98,8 +98,7 @@ class ListScreen(Screen):
                 color=constants.FONT_COLOR,
                 size_hint_y=None,
                 height='50dp',
-                on_release=lambda instance,
-                entry=entry: App.get_running_app().change_to_edit(instance, entry),
+                on_release=lambda instance, entry=entry: App.get_running_app().change_to_edit(instance, entry),
                 background_color=constants.BUTTON_COLOR,
                 on_press=lambda instance: self.change_button_color(instance, constants.BUTTON_PRESSED_COLOR)
             )
@@ -114,8 +113,7 @@ class ListScreen(Screen):
                 text=entry.word,
                 color=constants.FONT_COLOR,
                 size_hint_y=None, height='50dp',
-                on_release=lambda instance,
-                entry=entry: App.get_running_app().change_to_edit(instance, entry),
+                on_release=lambda instance, entry=entry: App.get_running_app().change_to_edit(instance, entry),
                 background_color=constants.BUTTON_COLOR,
                 on_press=lambda instance: self.change_button_color(instance, constants.BUTTON_PRESSED_COLOR)
             )
@@ -124,3 +122,8 @@ class ListScreen(Screen):
             
     def change_button_color(self, instance, color):
         instance.background_color = color
+
+    def reset_button_color(self, instance):
+        for widget in self.box.children:
+            for inner_widget in widget.children:
+                self.change_button_color(inner_widget, constants.BUTTON_COLOR)
