@@ -1,0 +1,44 @@
+#:kivy 2.0.0
+
+#:include source/app/global.kv
+
+<SettingsScreen>:
+    import_button: import_button
+    export_button: export_button
+    message: message
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_y: 1
+        spacing: '2dp'
+        Button:
+            background_color: button_color
+            size_hint_y: None
+            height: '50dp'
+            color: font_color
+            id: import_button
+            on_press: self.background_color = button_pressed_color
+            on_release: self.background_color = button_color
+            text: 'Import dictionary'
+        Button:
+            background_color: button_color
+            size_hint_y: None
+            height: '50dp'
+            color: font_color
+            id: export_button
+            on_press: self.background_color = button_pressed_color
+            on_release: self.background_color = button_color
+            text: "Export dictionary"
+        Widget:
+            size_hint_y: None
+            height: '3dp'
+        Label:
+            id: message
+            size_hint_y: None
+            height: self.texture_size[1]
+            size_hint: (1, None)
+            text_size: (self.width, None)
+            halign: 'center'
+            text: ''
+        Widget:
+            size_hint_y: 4
