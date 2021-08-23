@@ -13,7 +13,6 @@
             pos: self.pos
             size: self.size
 
-
     MultiScreen:
         id: multi_screen
         size_hint: 1, 9
@@ -26,6 +25,8 @@
         EditScreen:
             id: edit_screen
             name: 'edit'
+        SettingsScreen:
+            name: 'settings'
 
     LineSeparator:
 
@@ -56,3 +57,11 @@
                 on_release: root.change_to_list()
                 on_release: self.background_color = button_color
                 text: 'List'
+        SettingsButton:
+            Button: 
+                background_color: button_color
+                color: font_color
+                on_press: self.background_color = button_pressed_color
+                on_release: root.change_to_settings()
+                on_release: self.background_color = button_color
+                text: 'Settings'
