@@ -71,10 +71,13 @@ class Area(BoxLayout):
     def change_to_list(self):
         self.multi_screen.transition = SwapTransition() if (
             self.multi_screen.current == 'edit') else SlideTransition()
-        self.multi_screen.transition.direction = 'left'
+        self.multi_screen.transition.direction = 'right' if self.multi_screen.current == 'settings' else 'left'
         self.multi_screen.current = 'list'
 
     def change_to_settings(self):
+        self.multi_screen.transition = SwapTransition() if (
+            self.multi_screen.current == 'edit') else SlideTransition()
+        self.multi_screen.transition.direction = 'left'
         self.multi_screen.current = 'settings'
 
 
