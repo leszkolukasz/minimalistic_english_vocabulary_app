@@ -1,3 +1,5 @@
+"""This modules defines abtract class for word information extraction"""
+
 from abc import ABC, abstractmethod
 
 class WordInformationGetter(ABC):

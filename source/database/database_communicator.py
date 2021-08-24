@@ -1,3 +1,5 @@
+"""This module defines classes which are responsible for communication with dictionary file"""
+
 import datetime
 import math
 import os

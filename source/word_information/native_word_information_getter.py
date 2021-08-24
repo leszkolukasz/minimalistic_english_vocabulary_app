@@ -1,3 +1,5 @@
+"""This module defines class which extract information about a single word"""
+
 from .word_information_getter import WordInformationGetter
 
 class NativeWordInformationGetter(WordInformationGetter):

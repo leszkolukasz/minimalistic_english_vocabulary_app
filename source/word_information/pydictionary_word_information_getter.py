@@ -1,3 +1,5 @@
+"""This module defines class which extracts information about a single word using PyDictionary"""
+
 import PyDictionary
 
 from .word_information_getter import WordInformationGetter

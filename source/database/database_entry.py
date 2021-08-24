@@ -1,3 +1,5 @@
+"""This module defines class which holds information about a single word"""
+
 from functools import total_ordering
 import math
 
