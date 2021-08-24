@@ -61,8 +61,7 @@ class DatabaseCommunicator(metaclass=DatabaseCommunicatorSingleton):
         for entry in self._dictionary:
             if entry.level == level:
                 list_of_entries.append(entry)
-            if len(list_of_entries) > 1000:
-                break
+            
         list_of_entries = sorted(list_of_entries, key=lambda entry: entry.word)
         return list_of_entries
 

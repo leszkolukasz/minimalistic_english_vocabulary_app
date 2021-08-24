@@ -5,6 +5,7 @@
 <SearchScreen>:
     results: results
     searched_word: searched_word
+    scroll_view: scroll_view
     BoxLayout:
         orientation: 'vertical'
         TextInput:
@@ -13,6 +14,7 @@
             size_hint_y: 1
             text: ''
         ScrollView:
+            id: scroll_view
             size_hint_y: 9
             BoxLayout:
                 id: results
