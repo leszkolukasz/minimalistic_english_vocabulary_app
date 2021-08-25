@@ -16,16 +16,16 @@ source.dir = .
 source.include_exts = py,kv,txt,
 
 # (list) List of inclusions using pattern matching
-#source.include_patterns = assets/*,images/*.png
+source.include_patterns = images/icon.png
 
 # (list) Source files to exclude (let empty to not exclude anything)
-#source.exclude_exts = spec
+source.exclude_exts = pyc
 
 # (list) List of directory to exclude (let empty to not exclude anything)
-#source.exclude_dirs = .vscode,__pycache__,.pytest_cache,
+source.exclude_dirs = .vscode,__pycache__,.pytest_cache,bin,data/old_data,scripts/old_scripts
 
 # (list) List of exclusions using pattern matching
-#source.exclude_patterns = license,
+source.exclude_patterns = full_requirements.txt,minimum_requirements.txt,data/*_dictionary.txt,
 
 # (str) Application versioning (method 1)
 version = 0.1
@@ -213,7 +213,7 @@ fullscreen = 0
 #android.uses_library =
 
 # (str) Android logcat filters to use
-android.logcat_filters = *:S python:D
+# android.logcat_filters = *:S python:D
 
 # (bool) Copy library instead of making a libpymodules.so
 #android.copy_libs = 1
