@@ -1,8 +1,5 @@
 .vscode
 **/__pycache__
-data/old_data
-scripts/old_scripts
 vocab
 vocab_minimum
 .buildozer
-buildozer.spec
