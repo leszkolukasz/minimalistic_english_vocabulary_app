@@ -1,5 +1,4 @@
 .vscode
 **/__pycache__
-vocab
-vocab_minimum
+.pytest_cache
 .buildozer
