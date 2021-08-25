@@ -22,6 +22,8 @@ class MainScreen(Screen):
 
     Attributes
     ----------
+    scroll_view: ObjectProperty
+        link to scroll layout
     box_layout: ObjectProperty
         link to layout inside ScrollView
     forget_button: ObjectProperty
@@ -75,6 +77,7 @@ class MainScreen(Screen):
     word_name = ObjectProperty(None)
     word_synonym = ObjectProperty(None)
     word_translation = ObjectProperty(None)
+    scroll_view = ObjectProperty(None)
 
     def __init__(self, *args, **kargs):
         super().__init__(*args, **kargs)
@@ -128,6 +131,7 @@ class MainScreen(Screen):
         self.word_synonym.text = self._translator.get_synonym(self.current_entry)
         self.word_antonym.text = self._translator.get_antonym(self.current_entry)
         self.word_examples.text = self._translator.get_examples(self.current_entry)
+        self.scroll_view.scroll_y = 1
         
     def known_word_button(self, instance):
         if self.current_entry.word == 'No more words':
