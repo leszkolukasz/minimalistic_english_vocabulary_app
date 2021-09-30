@@ -34,11 +34,14 @@ class ListScreen(Screen):
         communicator that controls databse
     _batch_distributor: BatchDistributor
         object which divides list of entries into smaller batches
+    counter: BatchDistributor
+        link to counter that displays list size
     """
     results = ObjectProperty(None)
     grid = ObjectProperty(None)
     box = ObjectProperty(None)
     scroll_view = ObjectProperty(None)
+    counter = ObjectProperty(None)
 
     def __init__(self, *args, **kargs):
         super().__init__(*args, **kargs)
@@ -75,6 +78,7 @@ class ListScreen(Screen):
 
     def update_results(self):
         self.results.clear_widgets()
+        self.counter.text = str(len(self._batch_distributor))
         entries = self._batch_distributor.get_batch()
         for entry in entries:
             btn = Button(

@@ -26,3 +26,6 @@ class BatchDistributor:
 
     def is_batch(self):
         return True if self.entries else False
+
+    def __len__ (self):
+        return len(self.entries)
