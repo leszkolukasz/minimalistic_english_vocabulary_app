@@ -74,6 +74,7 @@ class MainScreen(Screen):
     word_antonym = ObjectProperty(None)
     word_examples = ObjectProperty(None)
     word_meaning = ObjectProperty(None)
+    word_level = ObjectProperty(None)
     word_name = ObjectProperty(None)
     word_synonym = ObjectProperty(None)
     word_translation = ObjectProperty(None)
@@ -126,6 +127,7 @@ class MainScreen(Screen):
     def build_box_layout(self):
         self.current_entry = self._choose_entry()
         self.word_name.text = self.current_entry.word
+        self.word_level.text = '(Level: '+str(self._translator.get_level(self.current_entry))+')'
         self.word_translation.text = self._translator.get_translation(self.current_entry)
         self.word_meaning.text = self._translator.get_definition(self.current_entry)
         self.word_synonym.text = self._translator.get_synonym(self.current_entry)

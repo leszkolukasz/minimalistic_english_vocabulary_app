@@ -41,3 +41,6 @@ class NativeWordInformationGetter(WordInformationGetter):
 
     def get_antonym(self, entry):
         return '' if entry.antonyms is None else ', '.join(entry.antonyms)
+
+    def get_level(self, entry):
+        return entry.level
