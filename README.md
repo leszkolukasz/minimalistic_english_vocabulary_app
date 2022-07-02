@@ -6,7 +6,7 @@ This app is meant to be a free alternative for other english learning apps, espe
 
 ## Installation (Desktop version)
 
-If you want to use all the features of this application (main application + database creation scripts) run the following command inside minimalistic_english_vocabulary_app folder:
+If you want to use all the features of this application (main application + developer tools) run the following command inside minimalistic_english_vocabulary_app folder:
 ```
 pip install -r full_requirements.txt
 ```
@@ -18,7 +18,7 @@ pip install -r minimum_requirements.txt
 
 ## Installation (Mobile version)
 
-To install mobile application copy .apk file from bin folder onto your mobile and run it.
+To install mobile application (only for android) copy .apk file from bin folder onto your mobile and run it.
 
 ## Usage
 
