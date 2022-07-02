@@ -16,6 +16,8 @@ If you just want to use main application run the following command inside minima
 pip install -r minimum_requirements.txt
 ```
 
+Project was tested with python 3.9 and I don't guarantee that it will work with newer python releases. There may be problems when running this app through conda.
+
 ## Installation (Mobile version)
 
 To install mobile application (only for android) copy .apk file from bin folder onto your mobile and run it.
