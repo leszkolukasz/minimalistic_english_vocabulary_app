@@ -1,4 +1,6 @@
 # Minimalistic English Vocabulary App
+![license](https://img.shields.io/badge/license-MIT-green)
+![status](https://img.shields.io/badge/status-finished-green)
 
 This app is meant to be a free alternative for other english learning apps, especially those which bombard you with adds every few seconds. It works by showing you a batch of words every day, and for each word you will see its translation to your native language alongisde with its definition, synonyms and antonyms, and usage examples (definition, synonyms, antonyms and usage examples are only shown in english lanugage). For each word you have to decide whether you remember this word or need to revise it, and this decision will impact when you will see this word next time. *Minimalistic English Vocabulary App* is based on a simple premise: the better you know given word, the rarier it will be shown to you in the daily batch. This is meant to boost the learning process and maximize the memorization of the vocabulary.
 
